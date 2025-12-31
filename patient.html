@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Enter Patient Details</h1>
+
+  <input id="pname" placeholder="Patient Name">
+  <input id="age" type="number" placeholder="Age">
+  <input id="gender" placeholder="Gender">
+  <input id="blood" placeholder="Blood Group">
+
+  <button onclick="goToDiseasePage()">Next</button>
+</div>
+
+<script>
+function goToDiseasePage() {
+  let name = document.getElementById("pname").value;
+  let age = document.getElementById("age").value;
+  let gender = document.getElementById("gender").value;
+  let blood = document.getElementById("blood").value;
+
+  if(!name || !age || !gender || !blood){
+    alert("Please fill all patient details before proceeding.");
+    return;
+  }
+
+  // Store data in sessionStorage for next page
+  sessionStorage.setItem("pname", name);
+  sessionStorage.setItem("age", age);
+  sessionStorage.setItem("gender", gender);
+  sessionStorage.setItem("blood", blood);
+
+  // Go to disease page
+  window.location.href = "disease.html";
+}
+</script>
+
+</body>
+</html>

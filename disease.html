@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disease & Health Check</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Disease & Health Check</h1>
+
+  <p><b>Patient Name:</b> <span id="displayName"></span></p>
+
+  <select id="disease">
+    <option value="">-- Select Disease --</option>
+    <option value="diabetes">Diabetes</option>
+    <option value="bp">Blood Pressure</option>
+    <option value="obesity">Obesity / BMI</option>
+    <option value="anemia">Anemia</option>
+    <option value="asthma">Asthma</option>
+  </select>
+
+  <input id="value1" placeholder="Value 1 (Sugar / Systolic / Weight kg)">
+  <input id="value2" placeholder="Value 2 (Diastolic / Height m)">
+
+  <button onclick="saveData()">Save</button>
+  <button onclick="cancelData()">Cancel</button>
+<button onclick="exitPage()">Exit</button>
+
+  <div id="output"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+// Display patient name from sessionStorage
+document.getElementById("displayName").innerText = sessionStorage.getItem("pname");
+</script>
+
+</body>
+</html>
